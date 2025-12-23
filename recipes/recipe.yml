@@ -16,12 +16,7 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
-
-  - type: bling
-    install:
-      - 1password 
-
+        
   - type: dnf
     repos:
       copr:
@@ -29,6 +24,8 @@ modules:
         - ryanabx/cosmic-epoch
     install:
       packages:
+        - 1password
+        - 1password-cli
         - micro
         - starship
         - cosmic-desktop
