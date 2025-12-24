@@ -6,7 +6,7 @@ name: tz-os
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-gnome
+base-image: ghcr.io/ublue-os/bazzite
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -18,7 +18,7 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - from-file: common/ly-module.yml
-  
+
   - type: dnf
     repos:
       copr:
