@@ -16,15 +16,14 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-  
-  # - from-file: common/ly-modules.yml
 
   - type: dnf
     repos:
       copr:
         - atim/starship
         - ryanabx/cosmic-epoch
-        - alternateved/keyd/
+        - alternateved/keyd
+        
     install:
       packages:
         - 1password
@@ -35,6 +34,7 @@ modules:
         - 1password
         - 1password-cli
         - keyd
+        
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
