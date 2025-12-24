@@ -17,22 +17,17 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
-  - from-file: common/ly-module.yml
-
   - type: dnf
     repos:
       copr:
         - atim/starship
-        - ryanabx/cosmic-epoch
         - alternateved/keyd
         
     install:
       packages:
-        - 1password
-        - 1password-cli
         - micro
+        - vim
         - starship
-        - cosmic-desktop
         - 1password
         - 1password-cli
         - keyd
@@ -57,6 +52,8 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
           - org.gnome.Loupe
+          - app.zen_browser.zen
+          - com.brave.Browser
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
