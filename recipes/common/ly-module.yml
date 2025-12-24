@@ -1,0 +1,26 @@
+modules:
+  - type: dnf
+    install:
+      packages:
+       - kernel-devel 
+       - pam-devel 
+       - libxcb-devel
+       - zig 
+       - xorg-x11-xauth
+       - xorg-x11-server
+       - git
+       - brightnessctl
+
+  - type: script
+    scripts: 
+      - buildly.sh
+
+  - type: systemd
+    system:
+      enabled:
+        - ly@tty2.service
+
+  - type: systemd
+    system:
+      disable:
+        - sddm-boot.service
