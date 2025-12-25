@@ -32,6 +32,8 @@ modules:
         - keyd
         - dms
         - mangowc
+        - rofi
+        - foot
         
     remove:
       packages:
