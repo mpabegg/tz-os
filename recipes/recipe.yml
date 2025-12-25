@@ -22,6 +22,7 @@ modules:
       copr:
         - atim/starship
         - alternateved/keyd
+        - avengemedia/dms
         
     install:
       packages:
@@ -31,6 +32,8 @@ modules:
         - 1password
         - 1password-cli
         - keyd
+        - dms
+        - niri
         
     remove:
       packages:
