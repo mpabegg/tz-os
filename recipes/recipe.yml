@@ -31,8 +31,7 @@ modules:
         - 1password-cli
         - keyd
         - dms
-        - mangowc
-        - rofi
+        - rofi-wayland
         - foot
         
     remove:
@@ -42,6 +41,11 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
+  - type: script
+    snippets:
+      - dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+      - dnf install mangowc
+      
   - type: systemd
     system:
       enabled:
