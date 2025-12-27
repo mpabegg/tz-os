@@ -22,6 +22,9 @@ modules:
       copr:
         - alternateved/keyd
         - avengemedia/dms
+        - sneexy/zen-browser
+      files: 
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
         
     install:
       packages:
@@ -30,18 +33,12 @@ modules:
         - 1password
         - 1password-cli
         - keyd
-        - dms
-        - mangowc
-        - rofi-wayland
-        - foot
+        - brave-browser
+        - zen-browser
         
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-
+        
   - type: systemd
     system:
       enabled:
@@ -53,10 +50,7 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
           - org.gnome.Loupe
-          - app.zen_browser.zen
-          - com.brave.Browser
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
