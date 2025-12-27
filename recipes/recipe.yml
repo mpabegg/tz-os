@@ -35,10 +35,7 @@ modules:
         - keyd
         - brave-browser
         - zen-browser
-        
-    remove:
-      packages:
-        
+            
   - type: systemd
     system:
       enabled:
